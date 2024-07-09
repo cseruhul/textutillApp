@@ -1,5 +1,7 @@
 console.log("My Javascript is working.")
 
+showNotes(); //The function will call while relode this page. 
+
 let addBtn = document.getElementById('addBtn');
 
 addBtn.addEventListener('click', function(e){
@@ -42,8 +44,12 @@ function showNotes(){
 
     let notesElem = document.getElementById('notes');
     
-    if(notesElem != 0){
+    if(noteObj.length != 0){
         notesElem.innerHTML = html;
+    }else{
+        notesElem.innerHTML = `
+            <h2>No notes found. Add Some notes.</h2>
+        `;
     }
 
 }

@@ -12,10 +12,16 @@ addBtn.addEventListener('click', function(e){
     } else {
         noteObj = JSON.parse(notes);
     }
-    noteObj.push(addText.value);
-    localStorage.setItem('notes', JSON.stringify(noteObj));
-    addText.value = "";
-    console.log(noteObj);
+
+    if(addText.value != ''){
+        noteObj.push(addText.value);
+        localStorage.setItem('notes', JSON.stringify(noteObj));
+        addText.value = "";
+        console.log(noteObj);
+    }else{
+        window.alert("Please input something to add note.");
+        
+    }
 
     showNotes();
 });

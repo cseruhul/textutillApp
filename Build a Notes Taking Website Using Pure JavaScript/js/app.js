@@ -20,6 +20,7 @@ addBtn.addEventListener('click', function(e){
     showNotes();
 });
 
+/*Functions to show from local storage. */
 function showNotes(){
     let notes = localStorage.getItem("notes");
 
@@ -38,8 +39,7 @@ function showNotes(){
                 <p class="card-text">${element + 1}</p>
                 <button class="btn btn-primary">Delete Note</button>
             </div>
-        </div>
-`
+        </div>`
     });
 
     let notesElem = document.getElementById('notes');
@@ -52,4 +52,9 @@ function showNotes(){
         `;
     }
 
+}
+
+/*Function to delete a  note*/
+function deleteNote(index){
+    console.log('I am deleting....');
 }

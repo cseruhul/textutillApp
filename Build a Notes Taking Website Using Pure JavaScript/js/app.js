@@ -1,4 +1,4 @@
-console.log("My Javascript is working.");
+// console.log("My Javascript is working.");
 
 showNotes(); //The function will call while relode this page.
 
@@ -73,3 +73,22 @@ function deleteNote(index) {
   localStorage.setItem("notes", JSON.stringify(noteObj));
   showNotes();
 }
+
+/*Searching Functionality  */
+
+let search = document.getElementById("searchText");
+
+search.addEventListener("input", function () {
+  let inputValue = search.value.toLowerCase();
+  console.log("search event listener called", inputValue);
+
+  let noteCard = document.getElementsByClassName("noteCard");
+  Array.from(noteCard).forEach(function (element) {
+    let cardText = element.getElementsByTagName("p")[0].innerText.toLowerCase();
+    if (cardText.includes(inputValue)) {
+      element.style.display = "block";
+    } else {
+      element.style.display = "none";
+    }
+  });
+});
